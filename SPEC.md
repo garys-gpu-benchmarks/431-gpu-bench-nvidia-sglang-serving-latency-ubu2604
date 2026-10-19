@@ -39,8 +39,8 @@ summary,ok,340,28,9,340,28,9,8,6
 
 ## Metrics
 
-- **#1: E2E latency, ms** — stored as `end_to_end_request_latency_p50_msec`.
-- **#2: TTFT, ms** — stored as `ttft_p50_msec`.
+- **#1: E2E latency p50, includes queue wait, ms** — stored as `end_to_end_request_latency_p50_msec`.
+- **#2: TTFT p50, includes queue wait, ms** — stored as `ttft_p50_msec`.
 - **#3: TPOT, ms** — stored as `time_per_output_token_tpot_p50_msec`.
 - **#4: ITL, ms** — stored as `inter_token_latency_itl_p50_msec`.
 - **#5: Request throughput** — stored as `request_throughput_requests_sec`.
