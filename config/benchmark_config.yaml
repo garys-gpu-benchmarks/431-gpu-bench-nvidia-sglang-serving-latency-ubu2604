@@ -20,7 +20,7 @@ sweep:
   output_len:
     smoke: 16
     baseline: 1350
-    extended: 7000
+    extended: 3900
   max_total_tokens:
     smoke: 2048
     baseline: 16384
@@ -37,6 +37,6 @@ sweep:
   num_prompts:
     smoke: 2
     baseline: 24
-    extended: 48
+    extended: 112
   backend: sglang
   dataset_name: synthetic
