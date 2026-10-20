@@ -14,7 +14,7 @@ Locked run_benchmark.sh starts tiny_sglang_server.py (smoke) or sglang.launch_se
 | schedule_policy | `--schedule-policy` | smoke=lpm, baseline=lpm, extended=lpm | lpm | From Parameter list; see Execution Description With Parameters. |
 | prompt_source | `--prompt-source` | smoke=synthetic, baseline=synthetic, extended=synthetic | synthetic | From Parameter list; see Execution Description With Parameters. |
 | input_len | `--input-len` | smoke=64, baseline=128, extended=128 | 128 | From Parameter list; see Execution Description With Parameters. |
-| output_len | `--output-len` | smoke=16, baseline=3250, extended=7000 | 3250 | From Parameter list; see Execution Description With Parameters. |
+| output_len | `--output-len` | smoke=16, baseline=1350, extended=7000 | 1350 | From Parameter list; see Execution Description With Parameters. |
 | max_total_tokens | `--max-total-tokens` | smoke=2048, baseline=16384, extended=32768 | 16384 | From Parameter list; see Execution Description With Parameters. |
 | max_running_requests | `--max-running-requests` | smoke=2, baseline=8, extended=8 | 8 | From Parameter list; see Execution Description With Parameters. |
 | max_concurrency | `--max-concurrency` | smoke=2, baseline=8, extended=8 | 8 | From Parameter list; see Execution Description With Parameters. |
