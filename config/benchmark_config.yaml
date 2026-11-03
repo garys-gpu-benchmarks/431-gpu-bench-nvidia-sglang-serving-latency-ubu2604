@@ -8,11 +8,7 @@
 # Add thresholds: or baselines: from hardware_profile.mi300x.yaml and Workload Type.
 sweep:
   profile: baseline
-  model_name: mistralai/Mistral-7B-v0.3
   dtype: bfloat16
-  tensor_parallel_size: 1
-  schedule_policy: lpm
-  prompt_source: synthetic
   input_len:
     smoke: 64
     baseline: 128
@@ -25,18 +21,16 @@ sweep:
     smoke: 2048
     baseline: 16384
     extended: 32768
-  max_running_requests:
-    smoke: 2
-    baseline: 8
-    extended: 8
+  model_name: mistralai/Mistral-7B-v0.3
   max_concurrency:
     smoke: 2
     baseline: 8
     extended: 8
-  request_rate: inf
+  max_running_requests:
+    smoke: 2
+    baseline: 8
+    extended: 8
   num_prompts:
     smoke: 2
     baseline: 24
     extended: 112
-  backend: sglang
-  dataset_name: synthetic

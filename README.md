@@ -85,7 +85,7 @@ Three operator scripts from [`garys-gpu-benchmarks/gpu-bench-suite`](https://git
 
 ## 1. Overview
 
-Locked run_benchmark.sh starts tiny_sglang_server.py (smoke) or sglang.launch_server (baseline/extended) on port 30000, then scripts/bench_serving.py with a concurrent ThreadPoolExecutor. model Mistral-7B-v0.3, yaml dtype, input_len, output_len, num_prompts, and max_concurrency (smoke 2, baseline 8) come from yaml. Honors the full num_prompts count. This is concurrent serving, in contrast to sequential 230 Sweep dimensions: model_name, dtype, tensor_parallel_size, schedule_policy, prompt_source, input_len, output_len, max_total_tokens.
+Locked run_benchmark.sh starts tiny_sglang_server.py (smoke) or sglang.launch_server (baseline/extended) on port 30000, then scripts/bench_serving.py with a concurrent ThreadPoolExecutor. model Mistral-7B-v0.3, yaml dtype, input_len, output_len, num_prompts, and max_concurrency (smoke 2, baseline 8) come from yaml. Honors the full num_prompts count. This is concurrent serving, in contrast to sequential 230 Sweep dimensions: dtype, input_len, output_len, max_total_tokens, model_name, max_concurrency, max_running_requests, num_prompts.
 
 ## 2. What It Validates
 

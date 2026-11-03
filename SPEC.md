@@ -2,26 +2,20 @@
 
 ## Execution Description
 
-Locked run_benchmark.sh starts tiny_sglang_server.py (smoke) or sglang.launch_server (baseline/extended) on port 30000, then scripts/bench_serving.py with a concurrent ThreadPoolExecutor. model Mistral-7B-v0.3, yaml dtype, input_len, output_len, num_prompts, and max_concurrency (smoke 2, baseline 8) come from yaml. Honors the full num_prompts count. This is concurrent serving, in contrast to sequential 230 Sweep dimensions: model_name, dtype, tensor_parallel_size, schedule_policy, prompt_source, input_len, output_len, max_total_tokens.
+Locked run_benchmark.sh starts tiny_sglang_server.py (smoke) or sglang.launch_server (baseline/extended) on port 30000, then scripts/bench_serving.py with a concurrent ThreadPoolExecutor. model Mistral-7B-v0.3, yaml dtype, input_len, output_len, num_prompts, and max_concurrency (smoke 2, baseline 8) come from yaml. Honors the full num_prompts count. This is concurrent serving, in contrast to sequential 230 Sweep dimensions: dtype, input_len, output_len, max_total_tokens, model_name, max_concurrency, max_running_requests, num_prompts.
 
 ## Parameters
 
 | Parameter | CLI Flag | Tested Values | Default | Description |
 | --- | --- | --- | --- | --- |
-| model_name | `--model-name` | smoke=mistralai/Mistral-7B-v0.3, baseline=mistralai/Mistral-7B-v0.3, extended=mistralai/Mistral-7B-v0.3 | mistralai/Mistral-7B-v0.3 | From Parameter list; see Execution Description With Parameters. |
 | dtype | `--dtype` | smoke=bfloat16, baseline=bfloat16, extended=bfloat16 | bfloat16 | From Parameter list; see Execution Description With Parameters. |
-| tensor_parallel_size | `--tensor-parallel-size` | smoke=1, baseline=1, extended=1 | 1 | From Parameter list; see Execution Description With Parameters. |
-| schedule_policy | `--schedule-policy` | smoke=lpm, baseline=lpm, extended=lpm | lpm | From Parameter list; see Execution Description With Parameters. |
-| prompt_source | `--prompt-source` | smoke=synthetic, baseline=synthetic, extended=synthetic | synthetic | From Parameter list; see Execution Description With Parameters. |
 | input_len | `--input-len` | smoke=64, baseline=128, extended=128 | 128 | From Parameter list; see Execution Description With Parameters. |
 | output_len | `--output-len` | smoke=16, baseline=1350, extended=3900 | 1350 | From Parameter list; see Execution Description With Parameters. |
 | max_total_tokens | `--max-total-tokens` | smoke=2048, baseline=16384, extended=32768 | 16384 | From Parameter list; see Execution Description With Parameters. |
-| max_running_requests | `--max-running-requests` | smoke=2, baseline=8, extended=8 | 8 | From Parameter list; see Execution Description With Parameters. |
+| model_name | `--model-name` | smoke=mistralai/Mistral-7B-v0.3, baseline=mistralai/Mistral-7B-v0.3, extended=mistralai/Mistral-7B-v0.3 | mistralai/Mistral-7B-v0.3 | From Parameter list; see Execution Description With Parameters. |
 | max_concurrency | `--max-concurrency` | smoke=2, baseline=8, extended=8 | 8 | From Parameter list; see Execution Description With Parameters. |
-| request_rate | `--request-rate` | smoke=inf, baseline=inf, extended=inf | inf | From Parameter list; see Execution Description With Parameters. |
+| max_running_requests | `--max-running-requests` | smoke=2, baseline=8, extended=8 | 8 | From Parameter list; see Execution Description With Parameters. |
 | num_prompts | `--num-prompts` | smoke=2, baseline=24, extended=112 | 24 | From Parameter list; see Execution Description With Parameters. |
-| backend | `--backend` | smoke=sglang, baseline=sglang, extended=sglang | sglang | From Parameter list; see Execution Description With Parameters. |
-| dataset_name | `--dataset-name` | smoke=synthetic, baseline=synthetic, extended=synthetic | synthetic | From Parameter list; see Execution Description With Parameters. |
 
 ## Invocation
 
