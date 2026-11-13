@@ -40,6 +40,11 @@
     "value": "Every profile starts sglang.launch_server with Mistral-7B-v0.3, then bench_serving.py"
   },
   {
+    "field_name": "Execution Description With Parameters",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Locked run_benchmark.sh starts sglang.launch_server on every profile, on port 30000, then scripts/bench_serving.py with a concurrent ThreadPoolExecutor. model Mistral-7B-v0.3, yaml dtype, input_len, output_len, num_prompts, and max_concurrency (smoke 2, baseline 8) come from yaml. Honors the full num_prompts count. This is concurrent serving, in contrast to sequential 230"
+  },
+  {
     "field_name": "Metrics",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "#1: E2E latency p50, client-observed from send, ms (end_to_end_request_latency_p50_msec); #2: TTFT p50, client-observed from send, ms (ttft_p50_msec); #3: TPOT, ms (time_per_output_token_tpot_p50_msec); #4: ITL, ms (inter_token_latency_itl_p50_msec); #5: Request throughput (request_throughput_requests_sec)"
@@ -173,11 +178,6 @@
     "field_name": "Command Methodology",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "On every profile, start python -m sglang.launch_server with Mistral-7B-v0.3 on port 30000. Then run scripts/bench_serving.py with yaml num_prompts and max_concurrency, and record end-to-end latency, TTFT, TPOT, ITL, and throughput. This is not prompt_response_client.py"
-  },
-  {
-    "field_name": "Execution Description With Parameters",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Locked run_benchmark.sh starts sglang.launch_server on every profile, on port 30000, then scripts/bench_serving.py with a concurrent ThreadPoolExecutor. model Mistral-7B-v0.3, yaml dtype, input_len, output_len, num_prompts, and max_concurrency (smoke 2, baseline 8) come from yaml. Honors the full num_prompts count. This is concurrent serving, in contrast to sequential 230"
   },
   {
     "field_name": "Execution Domain",
